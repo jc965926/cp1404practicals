@@ -1,0 +1,18 @@
+numbers = [3, 1, 4, 1, 5, 9, 2]
+# it's pi!
+
+numbers.insert(0, "ten")
+numbers.append(1)
+print(numbers[2:])
+print(9 in numbers)
+
+# GUESSES
+# numbers[0] = 3
+# numbers[-1] = 2
+# numbers[3] = 1
+# numbers[:-1] = all except 2
+# numbers[3:4] = 1
+# 5 in numbers = True
+# 7 in numbers = False
+# "3" in numbers = False
+# numbers + [6, 5, 3] = [3, 1, 4, 5, 9, 2, 6, 5, 3]
