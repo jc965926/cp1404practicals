@@ -9,15 +9,15 @@ FILENAME = "subject_data.txt"
 
 def main():
     """Program to load and display subject data from file."""
-    data = load_data(FILENAME)
-    max_name_length = max([len(subject[1]) for subject in data])
-    max_number_length = max([len(str(subject[2])) for subject in data])
-    for i, subject in enumerate(data):
-        print(f"{data[i][0]} is taught by {data[i][1]:<{max_name_length}} and has {data[i][2]:>{max_number_length}} students.")
+    subjects = load_subject_data(FILENAME)
+    max_name_length = max([len(subject[1]) for subject in subjects])
+    max_number_length = max([len(str(subject[2])) for subject in subjects])
+    for i, subject in enumerate(subjects):
+        print(f"{subjects[i][0]} is taught by {subjects[i][1]:<{max_name_length}} and has {subjects[i][2]:>{max_number_length}} students.")
 
 
 
-def load_data(filename=FILENAME):
+def load_subject_data(filename=FILENAME):
     """Read data from file formatted like: subject,lecturer,number of students."""
     input_file = open(filename)
     subjects = []
