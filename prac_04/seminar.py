@@ -21,13 +21,15 @@
 # sum_of_numbers should be called total for consistency with problem domain
 # naming is misleading, as numbers is a string. could use line instead
 
-data = [['Derek', 7], ['Xavier', 80], ['Bob', 612], ['Chantanelle', 9]]
+from operator import itemgetter
 
-max_name_length = max([len(pair[0]) for pair in data])
-max_number_length = max([len(str(pair[1])) for pair in data])
+name_to_score = {'Derek': 7, 'Xavier': 80, 'Bob': 612, 'Chantanelle': 9}
 
-print(max_name_length)
-print(max_number_length)
+name_width = max(len(name) for name in name_to_score)
+number_width = max(len(name_to_score) for name in name_to_score)
 
-for name, number in data:
-    print(f"{name:<{max_name_length}} = {number:>{max_number_length}}")
+print(name_width)
+print(number_width)
+
+for name, score in name_to_score.items():
+    print(f"{name:<{name_width}} = {score:>{number_width}}")

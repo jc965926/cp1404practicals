@@ -13,3 +13,6 @@ new_age = int(input("Age: "))
 name_to_age[new_name] = new_age
 for name, age in name_to_age.items():
     print(f"{name} -{age:3}")
+
+    # format:
+    # countries = {"Country" : ["Capital", int(population), float(%)]}
