@@ -20,13 +20,16 @@ class Guitar:
         # Gibson L - 5 CES(1922): $16, 035.40
         return f"{self.name} ({self.year}) : ${self.cost}"
 
+    def __lt__(self, other):
+        return self.year < other.year
+
     def get_age(self):
         age = datetime.datetime.now().year - self.year
         return age
 
     def is_vintage(self):
         age = self.get_age()
-        if age <= VINTAGE_AGE:
+        if age >= VINTAGE_AGE:
             return True
         else:
             return False
@@ -61,6 +64,7 @@ def main():
         guitars.append(new_guitar)
         new_guitar = add_guitar()
     print("These are my guitars:")
+    guitars.sort()
     i = 0
     for guitar in guitars:
         i +=1
